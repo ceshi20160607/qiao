@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qiao/modules/login/Index/Index_view.dart';
-import 'package:qiao/modules/login/login_user/binding.dart';
-import 'package:qiao/modules/login/login_user/logic.dart';
-import 'package:qiao/modules/login/login_user/view.dart';
+import 'package:qiao/modules/login/login/login_binding.dart';
 import 'package:qiao/router/app_pages.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,9 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginUserPage(),
+      initialBinding: LoginBinding(),
       initialRoute: AppRoutes.Login,
       getPages: AppPages.routes,
+      // home: LoginPage(),
     );
     // return GetMaterialApp(
     //   title: 'Flutter Qiao',

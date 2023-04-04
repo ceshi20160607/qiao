@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qiao/modules/login/login_user/view.dart';
+import 'package:qiao/modules/login/login/login_view.dart';
 
 import 'Index_controller.dart';
 
@@ -13,8 +13,7 @@ class IndexPage extends GetView<IndexController> {
     //       body: LoginUserPage(),
     //     ));
     return Scaffold(
-      body: LoginUserPage(),
+      body: LoginPage(),
     );
-
   }
 }

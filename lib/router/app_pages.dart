@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
+import 'package:qiao/modules/login/login/login_binding.dart';
+import 'package:qiao/modules/login/login/login_view.dart';
 
 import '../modules/login/Index/Index_view.dart';
-import '../modules/login/login_user/binding.dart';
-import '../modules/login/login_user/view.dart';
+
 part 'app_routes.dart';
 
 class AppPages {
-
   static final routes = [
     GetPage(
       name: AppRoutes.Index,
@@ -14,8 +14,8 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.Login,
-      page: () => LoginUserPage(),
-      binding: LoginUserBinding(),
+      page: () => LoginPage(),
+      binding: LoginBinding(),
     ),
     // GetPage(
     //   name: AppRoutes.Home,
