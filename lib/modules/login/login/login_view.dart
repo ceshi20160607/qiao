@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qiao/modules/login/login/login_logic.dart';
@@ -21,18 +22,18 @@ class LoginPage extends StatelessWidget {
       children: [
         const SizedBox(height: kToolbarHeight), // 距离顶部一个工具栏的高度
         buildTitle(), // Login
-        // buildTitleLine(), // Login下面的下划线
-        // const SizedBox(height: 60),
-        // buildEmailTextField(), // 输入邮箱
-        // const SizedBox(height: 30),
-        // buildPasswordTextField(), // 输入密码
-        // buildForgetPasswordText(), // 忘记密码
-        // const SizedBox(height: 60),
-        // buildLoginButton(), // 登录按钮
-        // const SizedBox(height: 40),
-        // buildOtherLoginText(), // 其他账号登录
-        // // buildOtherMethod(), // 其他登录方式
-        // buildRegisterText(), // 注册
+        buildTitleLine(), // Login下面的下划线
+        const SizedBox(height: 60),
+        buildEmailTextField(), // 输入邮箱
+        const SizedBox(height: 30),
+        buildPasswordTextField(), // 输入密码
+        buildForgetPasswordText(), // 忘记密码
+        const SizedBox(height: 60),
+        buildLoginButton(), // 登录按钮
+        const SizedBox(height: 40),
+        buildOtherLoginText(), // 其他账号登录
+        // buildOtherMethod(), // 其他登录方式
+        buildRegisterText(), // 注册
       ],
     ));
   }
@@ -175,7 +176,7 @@ class LoginPage extends StatelessWidget {
       // validator: (v) => logic.on_username_check(v),
       // onSaved: (v) => state.loginEntity.username = v!,
       // onSaved: (v) => logic.on_username_check(v),
-      // onChanged: (v) => state.loginEntity.username = v!,
+      onChanged: (v) => state.loginEntity.username = v!,
     );
   }
 
@@ -193,6 +194,9 @@ class LoginPage extends StatelessWidget {
   }
 
   Widget buildTitle() {
+
+    var dio =new Dio();
+    dio.post("localhost:8888/user/doLogin",queryParameters: {"username":"admin","password":"123123aa"});
     return const Padding(
         padding: EdgeInsets.all(8),
         child: Text(

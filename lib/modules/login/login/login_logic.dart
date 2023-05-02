@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 import 'package:qiao/entity/po/login_entity.dart';
 import 'package:qiao/entity/po/sa_token_entity.dart';
+import 'package:qiao/modules/login/home/home_view.dart';
 import 'package:qiao/service/api_service.dart';
 
 import 'login_state.dart';
@@ -19,7 +22,7 @@ class LoginLogic extends GetxController {
 
   RxBool isObscure = RxBool(false);
 
-  void on_login() {
+  void on_login() async{
     print(
         'email:  ${state.loginEntity.username}, password: ${state.loginEntity.password}');
     // 表单校验通过才会继续执行
@@ -27,9 +30,27 @@ class LoginLogic extends GetxController {
     on_password_check(state.loginEntity.username);
     // getHttp();
     //TODO 执行登录方法
-    Future<SaTokenEntity?> user = apiService.login(state.loginEntity);
+    SaTokenEntity? user = await apiService.login(state.loginEntity);
     print(user);
-
+    print("***********");
+    print(user);
+    Get.put(user?.tokenValue,tag: "satoken");
+    // var dio = new Dio();
+    // final putData = jsonEncode({"username":"admin","password":"123123aa","deviceType": "1"});
+    // var response = dio.post("http://localhost:8888/user/doLogin",data:{"username":"admin","password":"123123aa","deviceType": "1"});
+    Get.to(HomePage());
+    // var response = dio.post(
+    //   'http://localhost:8888/user/doLogin',
+    //   queryParameters: {
+    //     "username": "admin",
+    //     "password": "123123aa"
+    //   },
+    //   options: Options(
+    //     contentType: Headers.jsonContentType,
+    //   ),
+    // );
+    // print(
+    //     'email:  ${response}');
     print(
         'email:  ${state.loginEntity.username}, password: ${state.loginEntity.password}');
   }
