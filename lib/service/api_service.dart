@@ -7,7 +7,9 @@ import 'package:qiao/entity/po/sa_token_entity.dart';
 class ApiService extends GetxService {
   Future<SaTokenEntity?> login(LoginEntity params, {onError}) {
     return requestClient.post<SaTokenEntity>(APIS.login,
-        data: params, onError: onError);
+        data: params,
+        // headers: {"Content-Type": "application/json"},
+        onError: onError);
   }
 
   // Future<LoginEntity?> test() {

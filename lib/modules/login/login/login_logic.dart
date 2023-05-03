@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 import 'package:qiao/entity/po/login_entity.dart';
@@ -7,6 +5,8 @@ import 'package:qiao/entity/po/sa_token_entity.dart';
 import 'package:qiao/modules/login/home/home_view.dart';
 import 'package:qiao/service/api_service.dart';
 
+import '../../../core/share/SharedPreference.dart';
+import '../../../core/share/shared_preference_util.dart';
 import 'login_state.dart';
 
 class LoginLogic extends GetxController {
@@ -22,7 +22,7 @@ class LoginLogic extends GetxController {
 
   RxBool isObscure = RxBool(false);
 
-  void on_login() async{
+  void on_login() async {
     print(
         'email:  ${state.loginEntity.username}, password: ${state.loginEntity.password}');
     // 表单校验通过才会继续执行
@@ -34,10 +34,14 @@ class LoginLogic extends GetxController {
     print(user);
     print("***********");
     print(user);
-    Get.put(user?.tokenValue,tag: "satoken");
+    // Get.put(user?.tokenValue, tag: "satoken");
+    SharedPreferenceUtil.setBool(SharedPreference.isLogin, true);
+    SharedPreferenceUtil.setString(
+        SharedPreference.saToken, user?.tokenValue ?? "");
     // var dio = new Dio();
     // final putData = jsonEncode({"username":"admin","password":"123123aa","deviceType": "1"});
     // var response = dio.post("http://localhost:8888/user/doLogin",data:{"username":"admin","password":"123123aa","deviceType": "1"});
+    // Get.to(AppRoutes.Home);
     Get.to(HomePage());
     // var response = dio.post(
     //   'http://localhost:8888/user/doLogin',

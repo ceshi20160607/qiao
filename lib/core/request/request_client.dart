@@ -32,9 +32,10 @@ class RequestClient {
   }) async {
     try {
       Options options = Options()
-        ..method = method
-        ..headers = headers
-        ..contentType = Headers.formUrlEncodedContentType;
+            ..method = method
+            ..headers = headers
+          // ..contentType = Headers.formUrlEncodedContentType
+          ;
 
       data = _convertRequestData(data);
 

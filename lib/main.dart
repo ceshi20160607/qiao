@@ -1,12 +1,13 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qiao/router/app_pages.dart';
 
-import 'modules/login/login/login_binding.dart';
-import 'modules/login/login/login_view.dart';
+import 'core/share/shared_preference_util.dart';
 
 void main() {
+  //持久化存储初始化
+  SharedPreferenceUtil.getInstance();
+
   runApp(const MyApp());
 }
 
@@ -18,9 +19,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       // initialBinding: LoginBinding(),
-      // initialRoute: AppRoutes.Login,
+      initialRoute: AppRoutes.Login,
       getPages: AppPages.routes,
-      // home: LoginPage(),
+      // home: IndexPage(),
     );
     // return GetMaterialApp(
     //   title: 'Flutter Qiao',

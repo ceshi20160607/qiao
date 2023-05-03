@@ -6,7 +6,6 @@ import 'package:qiao/modules/login/login/login_logic.dart';
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
 
-  // final logic = Get.put<LoginLogic>(LoginLogic());
   final logic = Get.find<LoginLogic>();
   final state = Get.find<LoginLogic>().state;
 
@@ -100,7 +99,7 @@ class LoginPage extends StatelessWidget {
               // 设置圆角
               shape: MaterialStateProperty.all(const StadiumBorder(
                   side: BorderSide(style: BorderStyle.none)))),
-          child: Text('Login', style: TextStyle(fontSize: 30.0)),
+          child: Text('登录', style: TextStyle(fontSize: 30.0)),
           onPressed: () => logic.on_login(),
         ),
       ),
@@ -194,9 +193,15 @@ class LoginPage extends StatelessWidget {
   }
 
   Widget buildTitle() {
-
-    var dio =new Dio();
-    dio.post("localhost:8888/user/doLogin",queryParameters: {"username":"admin","password":"123123aa"});
+    var dio = new Dio();
+    var data = {
+      "username": "admin",
+      "password": "123123aa",
+      "loginType": 0,
+      "deviceType": 0
+    };
+    var resss = dio.post("http://192.168.0.121:8888/user/doLogin", data: data);
+    print(resss);
     return const Padding(
         padding: EdgeInsets.all(8),
         child: Text(
