@@ -45,6 +45,7 @@ dependencies:
   pull_to_refresh: ^2.0.0
   intl: ^0.17.0
   shared_preferences: ^2.0.15 #共享存储
+  animations: ^2.0.7 #动画转场
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
