@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'api_response_entity.g.dart';
+import '../../generated/json/api_response_entity.g.dart';
 
 class ApiResponse<T> {
   int? code;
