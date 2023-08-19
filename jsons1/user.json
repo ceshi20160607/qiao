@@ -1,0 +1,13 @@
+{
+  "tokenName": "satoken",
+  "tokenValue": "9df4aa34-7090-4c37-aca3-e447478e5af8",
+  "isLogin": true,
+  "loginId": "1",
+  "loginType": "login",
+  "tokenTimeout": "2592000",
+  "sessionTimeout": "2592000",
+  "tokenSessionTimeout": "-2",
+  "tokenActivityTimeout": "-1",
+  "loginDevice": "PC",
+  "tag": null
+}

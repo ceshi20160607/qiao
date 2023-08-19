@@ -1,0 +1,22 @@
+{
+  "id": "32",
+  "carType": 0,
+  "startTime": null,
+  "endTime": null,
+  "startKiloNumber": 0,
+  "endKiloNumber": 1549,
+  "betweenKiloNumber": 0,
+  "dangerNumber": 0,
+  "futureKiloNumber": 0,
+  "oilTitle": null,
+  "beforeOilNumber": 28.00,
+  "oilLiterNumber": 0,
+  "oilPrice": null,
+  "oilMoney": null,
+  "afterOilNumber": null,
+  "createTime": "2023-04-23 19:56:33",
+  "createUserId": "0",
+  "updateTime": "2023-05-17 20:38:53",
+  "updateUserId": null,
+  "companyId": null
+}
