@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 import 'package:qiao/entity/po/login_entity.dart';
 import 'package:qiao/entity/po/sa_token_entity.dart';
-import 'package:qiao/modules/login/home/home_view.dart';
+import 'package:qiao/router/app_pages.dart';
 import 'package:qiao/service/api_service.dart';
 
 import '../../../core/share/SharedPreference.dart';
@@ -42,7 +42,8 @@ class LoginLogic extends GetxController {
     // final putData = jsonEncode({"username":"admin","password":"123123aa","deviceType": "1"});
     // var response = dio.post("http://localhost:8888/user/doLogin",data:{"username":"admin","password":"123123aa","deviceType": "1"});
     // Get.to(AppRoutes.Home);
-    Get.to(HomePage());
+    // Get.to(IndexPage());
+    Get.toNamed(AppRoutes.Index);
     // var response = dio.post(
     //   'http://localhost:8888/user/doLogin',
     //   queryParameters: {
