@@ -3,6 +3,8 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:qiao/config/const/key_const.dart';
+import 'package:qiao/config/util/shared_preferences.dart';
 
 import 'config/env/global.dart';
 import 'config/route/routes.dart';
@@ -58,7 +60,9 @@ class MyApp extends StatelessWidget {
               // darkTheme: darkTheme,
               // themeMode: ThemeMode.light,
               // routingCallback: (routing) {},
-              initialRoute: AppRoutes.login,
+              initialRoute: SharedPreferencesUtil.getBool(KS.isLogin)
+                  ? AppRoutes.navbar
+                  : AppRoutes.login,
             ));
   }
 }

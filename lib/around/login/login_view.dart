@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       children: [
         const SizedBox(height: kToolbarHeight), // 距离顶部一个工具栏的高度
-        buildTitle(), // Login
+        // buildTitle(), // Login
         buildTitleLine(), // Login下面的下划线
         const SizedBox(height: 60),
         buildEmailTextField(), // 输入邮箱

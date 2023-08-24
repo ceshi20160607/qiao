@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:qiao/config/util/log_util.dart';
 
 import '../../config/base/base_common_controller.dart';
 import '../../config/base/base_controller.dart';
@@ -7,11 +8,15 @@ import '../../config/widget/loading_widget.dart';
 import '../../models/car.dart';
 
 class CarinfoLogic extends BaseCommonController {
-  Car? car;
+  Car car = Car();
 
   @override
   void initData() {
+    // if (Get.arguments == null) {
+    //   Get.back();
+    // } else {
     getnetworkdata(configNetWorkParmas());
+    // }
   }
 
   @override
@@ -20,12 +25,15 @@ class CarinfoLogic extends BaseCommonController {
 
     /// 展示loading
     Loading.show();
+    logD("info--->$info");
 
     Http().client.queryCarById(info['id']).then((value) {
       Loading.dissmiss();
       netState = NetState.dataSussessState;
       car = value.data!;
 
+      logD("info--->$netState");
+      logD("info--->$car");
       update();
     }).catchError((onError) {
       /// 结束loading

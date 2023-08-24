@@ -4,29 +4,49 @@ part 'car.g.dart';
 
 @JsonSerializable()
 class Car {
-  Car();
-
-  late String id;
-  late num carType;
+  String id;
+  num carType;
   String? startTime;
   String? endTime;
-  late num startKiloNumber;
-  late num endKiloNumber;
-  late num betweenKiloNumber;
-  late num dangerNumber;
-  late num futureKiloNumber;
+  num? startKiloNumber;
+  num? endKiloNumber;
+  num? betweenKiloNumber;
+  num? dangerNumber;
+  num? futureKiloNumber;
   String? oilTitle;
-  late num beforeOilNumber;
-  late num oilLiterNumber;
+  num? beforeOilNumber;
+  num? oilLiterNumber;
   num? oilPrice;
   num? oilMoney;
   num? afterOilNumber;
-  late String createTime;
-  late String createUserId;
-  late String updateTime;
+  String createTime;
+  String? createUserId;
+  String? updateTime;
   String? updateUserId;
   String? companyId;
-  
-  factory Car.fromJson(Map<String,dynamic> json) => _$CarFromJson(json);
+
+  Car(
+      {this.id = '',
+      this.carType = 0,
+      this.startTime,
+      this.endTime,
+      this.startKiloNumber,
+      this.endKiloNumber,
+      this.betweenKiloNumber,
+      this.dangerNumber,
+      this.futureKiloNumber,
+      this.oilTitle,
+      this.beforeOilNumber,
+      this.oilLiterNumber,
+      this.oilPrice,
+      this.oilMoney,
+      this.afterOilNumber,
+      this.createTime = '',
+      this.createUserId,
+      this.updateTime,
+      this.updateUserId,
+      this.companyId});
+
+  factory Car.fromJson(Map<String, dynamic> json) => _$CarFromJson(json);
   Map<String, dynamic> toJson() => _$CarToJson(this);
 }

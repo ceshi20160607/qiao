@@ -31,7 +31,7 @@ abstract class RestClient {
   /// 详情接口
   @GET("noteCar/queryById")
   Future<Result<Car>> queryCarById(
-    @Query('id') int id,
+    @Query('id') String id,
   );
   //
   // /// 点赞接口

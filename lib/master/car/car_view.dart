@@ -8,6 +8,18 @@ import 'car_logic.dart';
 class CarPage extends BaseListView<CarLogic> {
   CarPage({Key? key}) : super(key: key);
 
+  /// 设置导航栏文字
+  @override
+  String? get navTitle => '车';
+
+  /// 设置左边按钮宽度
+  @override
+  bool? get isTitleCenter => true;
+
+  /// 设置左边按钮宽度
+  @override
+  bool? get isHiddenLeftNav => false;
+
   @override
   Widget buildContent() {
     // TODO: implement buildContent

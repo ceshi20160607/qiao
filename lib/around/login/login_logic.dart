@@ -39,7 +39,7 @@ class LoginLogic extends GetxController {
       SharedPreferencesUtil.sharedPreferences
           .setString(KS.saToken, user.tokenValue);
       //跳转页面
-      Get.offAllNamed(AppRoutes.home);
+      Get.offAllNamed(AppRoutes.navbar);
       //更新
       update();
     }).catchError((onError) {
