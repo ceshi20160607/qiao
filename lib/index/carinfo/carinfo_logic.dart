@@ -7,7 +7,7 @@ import '../../config/widget/loading_widget.dart';
 import '../../models/car.dart';
 
 class CarinfoLogic extends BaseCommonController {
-  Car car = Car();
+  Car? car;
 
   @override
   void initData() {

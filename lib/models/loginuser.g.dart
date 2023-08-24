@@ -7,8 +7,8 @@ part of 'loginuser.dart';
 // **************************************************************************
 
 Loginuser _$LoginuserFromJson(Map<String, dynamic> json) => Loginuser()
-  ..username = json['username'] as String
-  ..password = json['password'] as String
+  ..username = json['username'] as String?
+  ..password = json['password'] as String?
   ..loginType = json['loginType'] as num
   ..deviceType = json['deviceType'] as num
   ..isObscure = json['isObscure'] as bool;

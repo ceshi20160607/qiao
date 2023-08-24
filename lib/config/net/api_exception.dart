@@ -4,9 +4,6 @@ import 'package:dio/dio.dart';
 ///异常
 ///
 class ApiException extends CustomDioError {
-  static const CODE_SUCCESS = 0;
-  static const CODE_UNKNOWN = 1000;
-
   final int code;
   final dynamic cause;
   final String? _message;

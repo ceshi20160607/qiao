@@ -7,8 +7,6 @@ import 'car_logic.dart';
 
 class CarPage extends BaseListView<CarLogic> {
   CarPage({Key? key}) : super(key: key);
-  final logic = Get.find<CarLogic>();
-  final state = Get.find<CarLogic>().state;
 
   @override
   Widget buildContent() {

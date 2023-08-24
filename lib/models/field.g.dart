@@ -27,13 +27,13 @@ Field _$FieldFromJson(Map<String, dynamic> json) => Field()
   ..isHidden = json['isHidden'] as num
   ..sorting = json['sorting'] as num
   ..stylePercent = json['stylePercent'] as num
-  ..maxNumRestrict = json['maxNumRestrict'] as String
-  ..minNumRestrict = json['minNumRestrict'] as String
-  ..precisions = json['precisions'] as String
-  ..optionsData = json['optionsData'] as String
-  ..remark = json['remark'] as String
-  ..isMulti = json['isMulti'] as num
-  ..batchId = json['batchId'] as String;
+  ..maxNumRestrict = json['maxNumRestrict'] as String?
+  ..minNumRestrict = json['minNumRestrict'] as String?
+  ..precisions = json['precisions'] as String?
+  ..optionsData = json['optionsData'] as String?
+  ..remark = json['remark'] as String?
+  ..isMulti = json['isMulti'] as num?
+  ..batchId = json['batchId'] as String?;
 
 Map<String, dynamic> _$FieldToJson(Field instance) => <String, dynamic>{
       'fieldId': instance.fieldId,

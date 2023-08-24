@@ -33,11 +33,13 @@ class EmptyStatusWidget extends StatefulWidget {
 
 class _EmptyStatusWidgetState extends State<EmptyStatusWidget> {
   /// 间隙
-  Widget _gap({double? height, double? width}) => SizedBox(height: height ?? 0, width: width ?? 0);
+  Widget _gap({double? height, double? width}) =>
+      SizedBox(height: height ?? 0, width: width ?? 0);
 
   /// 标题
   Widget _title() {
-    TextStyle style = TextStyle(fontSize: 14.sp, color: const Color(0xFF999999));
+    TextStyle style =
+        TextStyle(fontSize: 14.sp, color: const Color(0xFF999999));
     return Text(_getTitleString(), style: style);
   }
 
@@ -63,16 +65,17 @@ class _EmptyStatusWidgetState extends State<EmptyStatusWidget> {
   /// 获取图片名称
   Widget _getImageWidget() {
     if (widget.emptyType == EmptyStatusType.fail) {
-      return Image.asset('assets/images/icon_image_fail.png');
+      return Image.asset('images/icon_image_fail.png');
     } else {
-      return Image.asset('assets/images/image_empty.webp');
+      return Image.asset('images/image_empty.webp');
     }
   }
 
   /// 刷新按钮
   Widget _refreshButton() {
     if (widget.refreshTitle != null && widget.refreshTitle!.isNotEmpty) {
-      TextStyle style = TextStyle(fontSize: 16.sp, color: const Color(0xFFFFFFFF));
+      TextStyle style =
+          TextStyle(fontSize: 16.sp, color: const Color(0xFFFFFFFF));
       Decoration decoration = BoxDecoration(
         color: const Color(0xFF102FA5),
         borderRadius: BorderRadius.circular(19.r),

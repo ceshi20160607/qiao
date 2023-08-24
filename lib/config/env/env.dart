@@ -14,13 +14,13 @@ class Env {
   static String getEnvConfig({String env = dev}) {
     switch (env) {
       case test:
-        return 'http:localhost:8888/';
+        return 'http://localhost:8888/';
       case pre:
-        return 'http:localhost:8888/';
+        return 'http://localhost:8888/';
       case prod:
-        return 'http:localhost:8888/';
+        return 'http://localhost:8888/';
       default:
-        return 'http:localhost:8888/';
+        return 'http://localhost:8888/';
     }
   }
 }

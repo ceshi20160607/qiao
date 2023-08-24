@@ -26,14 +26,14 @@ class Field {
   late num isHidden;
   late num sorting;
   late num stylePercent;
-  late String maxNumRestrict;
-  late String minNumRestrict;
-  late String precisions;
-  late String optionsData;
-  late String remark;
-  late num isMulti;
-  late String batchId;
-
-  factory Field.fromJson(Map<String, dynamic> json) => _$FieldFromJson(json);
+  String? maxNumRestrict;
+  String? minNumRestrict;
+  String? precisions;
+  String? optionsData;
+  String? remark;
+  num? isMulti;
+  String? batchId;
+  
+  factory Field.fromJson(Map<String,dynamic> json) => _$FieldFromJson(json);
   Map<String, dynamic> toJson() => _$FieldToJson(this);
 }

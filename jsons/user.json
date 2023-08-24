@@ -9,5 +9,5 @@
   "tokenSessionTimeout": "-2",
   "tokenActivityTimeout": "-1",
   "loginDevice": "PC",
-  "tag": null
+  "tag?": null
 }

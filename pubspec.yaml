@@ -45,6 +45,9 @@ dependencies:
   # toast
   fluttertoast: ^8.0.9
   flutter_easyloading: ^3.0.5
+  # Flutter 国际化
+  flutter_localizations:
+    sdk: flutter
   # 缓存
   shared_preferences: ^2.0.1
   cached_network_image: ^3.2.1
@@ -70,9 +73,9 @@ dev_dependencies:
   build_runner: ^2.1.11
   #  json_serializable: '>4.4.0'
   #   ///命令行执行flutter pub run json5_model --src=jsons
-  #  json_serializable: ^6.7.1
-  #  json5_model: ^2.0.1
-
+#  json_serializable: ^6.7.1
+#  json5_model: ^2.0.1
+#
   json_model: ^1.0.0
   json_serializable: ^6.7.1
 
@@ -122,4 +125,4 @@ flutter:
   fonts:
     - family: IconFont
       fonts:
-        - asset: assets/fonts/iconfont.ttf
+        - asset: fonts/iconfont.ttf

@@ -19,11 +19,11 @@
   "isHidden": 0,
   "sorting": 3,
   "stylePercent": 50,
-  "maxNumRestrict": null,
-  "minNumRestrict": null,
-  "precisions": null,
-  "optionsData": null,
-  "remark": null,
-  "isMulti": 1,
-  "batchId": null
+  "maxNumRestrict?": null,
+  "minNumRestrict?": null,
+  "precisions?": null,
+  "optionsData?": null,
+  "remark?": null,
+  "isMulti?": 1,
+  "batchId?": null
 }

@@ -9,20 +9,24 @@ class CommonUtil {
       icon: Container(
         margin: EdgeInsets.only(bottom: 8),
         child: Image.asset(
-          "assets/images/icon/${iconName}_custom.png",
+          "images/icon/${iconName}_custom.png",
           width: 18,
           height: 18,
           gaplessPlayback:
               true, //gaplessPlayback: 原图片保持不变，直到图片加载完成时替换图片，这样就不会出现闪烁
+          color: Colors.white,
+          colorBlendMode: BlendMode.color,
         ),
       ),
       activeIcon: Container(
         margin: EdgeInsets.only(bottom: 8),
         child: Image.asset(
-          "assets/images/icon/${iconName}_selected.png",
+          "images/icon/${iconName}_custom.png",
           width: 18,
           height: 18,
           gaplessPlayback: true,
+          color: Colors.green,
+          colorBlendMode: BlendMode.color,
         ),
       ),
     );

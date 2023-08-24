@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:qiao/config/i18n/key_str.dart';
+import 'package:qiao/config/const/key_const.dart';
 
 import '../util/log_util.dart';
 import '../util/shared_preferences.dart';

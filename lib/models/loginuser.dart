@@ -6,8 +6,8 @@ part 'loginuser.g.dart';
 class Loginuser {
   Loginuser();
 
-  late String username;
-  late String password;
+  String? username;
+  String? password;
   late num loginType;
   late num deviceType;
   late bool isObscure;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:qiao/index/car/car_logic.dart';
-import 'package:qiao/models/car.dart';
+import 'package:qiao/config/util/log_util.dart';
 
+import '../../models/car.dart';
 import '../env/themConfig.dart';
 
 class InfoWidget extends StatelessWidget {
@@ -13,7 +13,7 @@ class InfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final login = Get.find<CarLogic>();
+    logD("InfoWidget--->:$model");
     return Container(
       width: 1.sw,
       color: Colors.white,

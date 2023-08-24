@@ -1,14 +1,25 @@
 import 'package:get/get.dart';
 import 'package:qiao/config/route/routes.dart';
-import 'package:qiao/models/index.dart';
+import 'package:qiao/config/util/log_util.dart';
 
-import '../../config/i18n/key_str.dart';
+import '../../config/const/key_const.dart';
 import '../../config/net/http.dart';
 import '../../config/util/shared_preferences.dart';
 import '../../config/widget/loading_widget.dart';
+import '../../models/loginuser.dart';
+import '../../models/user.dart';
 
 class LoginLogic extends GetxController {
   final Loginuser state = Loginuser();
+
+  @override
+  void onInit() {
+    state.username = "";
+    state.password = "";
+    state.loginType = 0;
+    state.deviceType = 0;
+    state.isObscure = false;
+  }
 
   on_login() {
     /// 展示loading
@@ -20,6 +31,8 @@ class LoginLogic extends GetxController {
       // infoWorkModel = value.data!;
       // SharedPreferencesUtil.sharedPreferences.set
       User user = value.data!;
+
+      logD("msg" + value.toString());
 
       ///设置缓存token
       SharedPreferencesUtil.sharedPreferences.setBool(KS.isLogin, true);

@@ -1,7 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:qiao/models/index.dart';
 import 'package:retrofit/http.dart';
 
+import '../../models/car.dart';
+import '../../models/carpage.dart';
+import '../../models/user.dart';
 import '../net/result.dart';
 
 part 'rest_client.g.dart';

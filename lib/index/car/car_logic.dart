@@ -85,10 +85,11 @@ class CarLogic extends BaseListController {
   @override
   Map<String, dynamic> configNetWorkParmas() {
     return {
+      'moduleType': 0,
       'pageNumber': page,
       "pageSize": 20,
-      'keyword': '车讯原创',
-      'moduleType': 0,
+      "pageType": 0,
+      'keyword': '',
     };
   }
 

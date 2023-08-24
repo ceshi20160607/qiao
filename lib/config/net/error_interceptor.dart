@@ -21,7 +21,7 @@ class ErrorInterceptor extends Interceptor {
 
     /// 错误提示
     logE(
-      'DioError===: ${appException.toString()},method=${err.requestOptions.method},code=${err.response?.statusCode},uri=${err.requestOptions.uri}',
+      'DioError===: ${appException.toString()},method=${err.requestOptions.method},method=${err.requestOptions.data},code=${err.response?.statusCode},uri=${err.requestOptions.uri}',
     );
 
     err.error = appException;

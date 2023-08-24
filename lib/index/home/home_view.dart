@@ -2,7 +2,7 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../config/i18n/key_str.dart';
+import '../../config/const/key_const.dart';
 import '../../config/util/CommonUtil.dart';
 import 'home_logic.dart';
 

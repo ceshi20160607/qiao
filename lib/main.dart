@@ -1,40 +1,95 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import 'config/env/global.dart';
 import 'config/route/routes.dart';
 
-void main() {
+Future<void> main() async {
+  await Global.init();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  ///app 全局context
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
+
   @override
   Widget build(BuildContext context) {
-    // return MaterialApp(
-    //   title: 'Flutter Demo',
-    //   theme: ThemeData(
-    //     // This is the theme of your application.
-    //     //
-    //     // Try running your application with "flutter run". You'll see the
-    //     // application has a blue toolbar. Then, without quitting the app, try
-    //     // changing the primarySwatch below to Colors.green and then invoke
-    //     // "hot reload" (press "r" in the console where you ran "flutter run",
-    //     // or simply save your changes to "hot reload" in a Flutter IDE).
-    //     // Notice that the counter didn't reset back to zero; the application
-    //     // is not restarted.
-    //     primarySwatch: Colors.blue,
-    //   ),
-    //   home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    // );
-    return GetMaterialApp(
-      initialRoute: AppRoutes.login,
-      getPages: AppRoutes.routes,
-    );
+    debugPaintSizeEnabled = false;
+
+    return ScreenUtilInit(
+        designSize: const Size(375, 812),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (BuildContext context, Widget? child) => GetMaterialApp(
+              getPages: AppRoutes.routes,
+              // localizationsDelegates: const [
+              //   GlobalMaterialLocalizations.delegate,
+              //   GlobalWidgetsLocalizations.delegate,
+              //   GlobalCupertinoLocalizations.delegate, //iOS
+              // ],
+              defaultTransition: Transition.cupertino,
+              // supportedLocales: const [
+              //   Locale('zh', 'CN'),
+              //   Locale('en', 'US'),
+              // ],
+              builder: (context, widget) {
+                return MediaQuery(
+                  //设置文字大小不随系统设置改变
+                  data: MediaQuery.of(context).copyWith(
+                    textScaleFactor: 1.0,
+                  ),
+                  child: FlutterEasyLoading(
+                    child: widget,
+                  ),
+                );
+              },
+              // navigatorKey: navigatorKey,
+              debugShowCheckedModeBanner: false,
+              // home: TabbarPage(),
+              // initialBinding: TabbarBinding(),
+              // theme: lightTheme,
+              // darkTheme: darkTheme,
+              // themeMode: ThemeMode.light,
+              // routingCallback: (routing) {},
+              initialRoute: AppRoutes.login,
+            ));
   }
 }
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+//
+//   // This widget is the root of your application.
+//   @override
+//   Widget build(BuildContext context) {
+//     // return MaterialApp(
+//     //   title: 'Flutter Demo',
+//     //   theme: ThemeData(
+//     //     // This is the theme of your application.
+//     //     //
+//     //     // Try running your application with "flutter run". You'll see the
+//     //     // application has a blue toolbar. Then, without quitting the app, try
+//     //     // changing the primarySwatch below to Colors.green and then invoke
+//     //     // "hot reload" (press "r" in the console where you ran "flutter run",
+//     //     // or simply save your changes to "hot reload" in a Flutter IDE).
+//     //     // Notice that the counter didn't reset back to zero; the application
+//     //     // is not restarted.
+//     //     primarySwatch: Colors.blue,
+//     //   ),
+//     //   home: const MyHomePage(title: 'Flutter Demo Home Page'),
+//     // );
+//     return GetMaterialApp(
+//       initialRoute: AppRoutes.login,
+//       getPages: AppRoutes.routes,
+//     );
+//   }
+// }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});

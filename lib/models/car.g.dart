@@ -9,24 +9,24 @@ part of 'car.dart';
 Car _$CarFromJson(Map<String, dynamic> json) => Car()
   ..id = json['id'] as String
   ..carType = json['carType'] as num
-  ..startTime = json['startTime'] as String
-  ..endTime = json['endTime'] as String
+  ..startTime = json['startTime'] as String?
+  ..endTime = json['endTime'] as String?
   ..startKiloNumber = json['startKiloNumber'] as num
   ..endKiloNumber = json['endKiloNumber'] as num
   ..betweenKiloNumber = json['betweenKiloNumber'] as num
   ..dangerNumber = json['dangerNumber'] as num
   ..futureKiloNumber = json['futureKiloNumber'] as num
-  ..oilTitle = json['oilTitle'] as String
+  ..oilTitle = json['oilTitle'] as String?
   ..beforeOilNumber = json['beforeOilNumber'] as num
   ..oilLiterNumber = json['oilLiterNumber'] as num
-  ..oilPrice = json['oilPrice'] as String
-  ..oilMoney = json['oilMoney'] as String
-  ..afterOilNumber = json['afterOilNumber'] as String
+  ..oilPrice = json['oilPrice'] as num?
+  ..oilMoney = json['oilMoney'] as num?
+  ..afterOilNumber = json['afterOilNumber'] as num?
   ..createTime = json['createTime'] as String
   ..createUserId = json['createUserId'] as String
   ..updateTime = json['updateTime'] as String
-  ..updateUserId = json['updateUserId'] as String
-  ..companyId = json['companyId'] as String;
+  ..updateUserId = json['updateUserId'] as String?
+  ..companyId = json['companyId'] as String?;
 
 Map<String, dynamic> _$CarToJson(Car instance) => <String, dynamic>{
       'id': instance.id,

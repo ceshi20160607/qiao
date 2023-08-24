@@ -17,7 +17,7 @@ User _$UserFromJson(Map<String, dynamic> json) => User()
   ..tokenSessionTimeout = json['tokenSessionTimeout'] as String
   ..tokenActivityTimeout = json['tokenActivityTimeout'] as String
   ..loginDevice = json['loginDevice'] as String
-  ..tag = json['tag'] as String;
+  ..tag = json['tag'] as String?;
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'tokenName': instance.tokenName,

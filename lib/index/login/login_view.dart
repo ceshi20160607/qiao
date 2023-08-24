@@ -137,42 +137,11 @@ class LoginPage extends StatelessWidget {
             onPressed: logic.on_password_show(),
           ),
         ));
-    // return Obx(() => TextFormField(
-    //     onChanged: (v) => state.loginEntity.password = v!,
-    //     // onSaved: (v) => state.loginEntity.password = v!,
-    //     // validator: (v) => logic.on_password_check(v),
-    //     obscureText: logic.isObscure.value,
-    //     decoration: InputDecoration(
-    //       labelText: "密码",
-    //       suffixIcon: IconButton(
-    //         icon: Icon(
-    //           Icons.remove_red_eye,
-    //           color: logic.isObscure.value ? Colors.grey : Colors.green,
-    //         ),
-    //         onPressed: logic.on_password_show,
-    //       ),
-    //     )));
-    // return TextFormField(
-    //     onChanged: (v) => state.loginEntity.password = v!,
-    //     // onSaved: (v) => state.loginEntity.password = v!,
-    //     // validator: (v) => logic.on_password_check(v),
-    //     validator: (v) => logic.on_password_check(v),
-    //     obscureText: logic.isObscure.value,
-    //     decoration: InputDecoration(
-    //       labelText: "密码",
-    //       suffixIcon: IconButton(
-    //         icon: Icon(
-    //           Icons.remove_red_eye,
-    //           color: logic.isObscure.value ? Colors.grey : Colors.green,
-    //         ),
-    //         onPressed: logic.on_password_show,
-    //       ),
-    //     ));
   }
 
   Widget buildEmailTextField() {
     return TextFormField(
-      decoration: const InputDecoration(labelText: '用户名/邮箱'),
+      decoration: InputDecoration(labelText: '用户名/邮箱'),
       // validator: (v) => logic.on_username_check(v),
       // onSaved: (v) => state.loginEntity.username = v!,
       // onSaved: (v) => logic.on_username_check(v),
@@ -201,7 +170,7 @@ class LoginPage extends StatelessWidget {
       "loginType": 0,
       "deviceType": 0
     };
-    var resss = dio.post("http://192.168.0.121:8888/user/doLogin", data: data);
+    var resss = dio.post("http://192.168.0.116:8888/user/doLogin", data: data);
     print(resss);
     return const Padding(
         padding: EdgeInsets.all(8),
