@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../config/base/base_common_view.dart';
 import 'carinfo_logic.dart';
@@ -30,12 +31,27 @@ class CarinfoPage extends BaseCommonView<CarinfoLogic> {
   @override
   Widget buildContent() {
     // TODO: implement buildContent
-    return Builder(
+    return GetBuilder<CarinfoLogic>(
         builder: (_) => creatCommonView(
             controller,
             Stack(
               children: [
-                // Text(controller.car.id),
+                SizedBox(
+                  height: 100.h,
+                  width: 50.w,
+                  child: Column(
+                    children: [
+                      Text(
+                        controller.car.carType == 0 ? "日程" : "加油",
+                      )
+                    ],
+                  ),
+                ),
+                Text(controller.car.id),
+                Text(
+                  controller.car.createTime,
+                  style: TextStyle(backgroundColor: Colors.orange),
+                ),
                 // Padding(
                 //   padding: EdgeInsets.only(
                 //       top: ScreenUtil().statusBarHeight + kToolbarHeight,
@@ -45,18 +61,18 @@ class CarinfoPage extends BaseCommonView<CarinfoLogic> {
                 //   ),
                 // )
 
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: ScreenUtil().statusBarHeight + kToolbarHeight,
-                      bottom: ScreenUtil().bottomBarHeight + 60.h),
-                  child: Text(
-                    "App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境App切换环境,杀死App生效",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.red),
-                  ),
-                ),
+                // Padding(
+                //   padding: EdgeInsets.only(
+                //       top: ScreenUtil().statusBarHeight + kToolbarHeight,
+                //       bottom: ScreenUtil().bottomBarHeight + 60.h),
+                //   child: Text(
+                //     controller.car.createTime,
+                //     style: TextStyle(
+                //         fontSize: 16,
+                //         fontWeight: FontWeight.bold,
+                //         color: Colors.red),
+                //   ),
+                // ),
               ],
             )));
   }

@@ -20,7 +20,7 @@ class InfoItemWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 10.h,
+            height: 70.h,
           ),
           itemWidget(),
           SizedBox(

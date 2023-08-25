@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:qiao/config/util/log_util.dart';
 
 enum NetState {
   /// 初始状态
@@ -37,35 +37,37 @@ abstract class BaseController extends SuperController {
   @override
   void onReady() {
     super.onReady();
+    logD("a11112ready");
     initData();
   }
 
   @override
   void onDetached() {
-    debugPrint("a11111");
+    logD("a11111");
   }
 
   @override
   void onInit() {
     // TODO: implement onInit
     super.onInit();
+    logD("a11112init");
   }
 
   @override
   void onInactive() {
-    debugPrint("a11112");
+    logD("a11112");
   }
 
   @override
   void onPaused() {
     //彻底离开回调
-    debugPrint("a11113");
+    logD("a11113");
   }
 
   @override
   void onResumed() {
     //彻底恢复回调
-    debugPrint("a11114");
+    logD("a11114");
   }
 
   void initData();

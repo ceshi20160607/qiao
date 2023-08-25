@@ -15,28 +15,106 @@ class InfoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     logD("InfoWidget--->:$model");
     return Container(
+      // margin: EdgeInsets.only(left: 5.w, right: 5.w, bottom: 10.h),
       width: 1.sw,
       color: Colors.white,
-      padding: EdgeInsets.only(left: 10.w, right: 10.w, top: 14.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // threeImageWidget(),
           SizedBox(
-            height: 10.h,
+            height: 8.h,
           ),
-          titleWidget(),
+          rowWidget(),
           SizedBox(
-            height: 10.h,
-          ),
-          // bottowWidget(login),
-          SizedBox(
-            height: 14.h,
+            height: 8.h,
           ),
           lineWidget()
         ],
       ),
     );
+  }
+
+  /// 文字描述
+  Widget rowWidget() {
+    DateTime ctime = DateTime.parse(model.createTime);
+    return Row(
+      children: [
+        SizedBox(
+          width: 50.w,
+          child: Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    color: Colors.greenAccent),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      ctime.year.toString(),
+                      // style: TextStyle(backgroundColor: Colors.red),
+                    ),
+                    Text(
+                      ctime.month.toString() + "/" + ctime.day.toString(),
+                      // style: TextStyle(backgroundColor: Colors.blue),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          width: 50.w,
+          child: Column(
+            children: [
+              Text(
+                model.carType == 0 ? "日程" : "加油",
+              )
+            ],
+          ),
+        ),
+        contentWidget(),
+      ],
+    );
+  }
+
+  /// 返回后面内容
+  Widget contentWidget() {
+    if (model.carType == 0) {
+      return SizedBox(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "油量：" +
+                  (model.beforeOilNumber ?? "").toString() +
+                  "-" +
+                  (model.afterOilNumber ?? "").toString(),
+              style: TextStyle(backgroundColor: Colors.blue),
+            ),
+            Text(
+              "公里：" +
+                  (model.startKiloNumber ?? "").toString() +
+                  "-" +
+                  (model.endKiloNumber ?? "").toString(),
+              style: TextStyle(backgroundColor: Colors.orange),
+            ),
+          ],
+        ),
+      );
+    } else {
+      return SizedBox(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("价格：" + model.oilPrice.toString()),
+            Text("数量：" + model.oilLiterNumber.toString()),
+            Text("总计：" + model.oilMoney.toString()),
+          ],
+        ),
+      );
+    }
   }
 
   /// 三张图片
