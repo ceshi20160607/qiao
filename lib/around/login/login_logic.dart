@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:qiao/config/route/routes.dart';
 import 'package:qiao/config/util/log_util.dart';
 
 import '../../config/const/key_const.dart';
+import '../../config/enum/module_type.dart';
 import '../../config/net/http.dart';
 import '../../config/util/shared_preferences.dart';
 import '../../config/widget/loading_widget.dart';
@@ -39,7 +39,7 @@ class LoginLogic extends GetxController {
       SharedPreferencesUtil.sharedPreferences
           .setString(KS.saToken, user.tokenValue);
       //跳转页面
-      Get.offAllNamed(AppRoutes.navbar);
+      Get.offAllNamed(ModuleTypeEnum.NAVBAR.routepath);
       //更新
       update();
     }).catchError((onError) {

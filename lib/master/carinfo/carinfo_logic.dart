@@ -5,10 +5,10 @@ import '../../config/base/base_common_controller.dart';
 import '../../config/base/base_controller.dart';
 import '../../config/net/http.dart';
 import '../../config/widget/loading_widget.dart';
-import '../../models/car.dart';
+import '../../models/fieldvo.dart';
 
 class CarinfoLogic extends BaseCommonController {
-  Car car = Car();
+  List<Fieldvo> fieldList = [];
 
   @override
   void initData() {
@@ -27,13 +27,28 @@ class CarinfoLogic extends BaseCommonController {
     Loading.show();
     logD("info--->$info");
 
-    Http().client.queryCarById(info['id']).then((value) {
+    // Http().client.queryCarById(info['id']).then((value) {
+    //   Loading.dissmiss();
+    //   netState = NetState.dataSussessState;
+    //   car = value.data!;
+    //
+    //   logD("info--->$netState");
+    //   logD("info--->$car");
+    //   update();
+    // }).catchError((onError) {
+    //   /// 结束loading
+    //   Loading.dissmiss();
+    //   print(onError);
+    //   netState = NetState.errorshowRelesh;
+    //   update();
+    // });
+    Http().client.queryInformation(info['id']).then((value) {
       Loading.dissmiss();
       netState = NetState.dataSussessState;
-      car = value.data!;
+      fieldList = value.data!;
 
       logD("info--->$netState");
-      logD("info--->$car");
+      logD("info--->$fieldList");
       update();
     }).catchError((onError) {
       /// 结束loading

@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:qiao/models/fieldvo.dart';
 import 'package:retrofit/http.dart';
 
 import '../../models/car.dart';
@@ -31,6 +32,12 @@ abstract class RestClient {
   /// 详情接口
   @GET("noteCar/queryById")
   Future<Result<Car>> queryCarById(
+    @Query('id') String id,
+  );
+
+  /// 详情接口
+  @POST("noteCar/queryInformation")
+  Future<Result<List<Fieldvo>>> queryInformation(
     @Query('id') String id,
   );
   //

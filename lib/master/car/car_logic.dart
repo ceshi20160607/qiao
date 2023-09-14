@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
-import 'package:qiao/config/route/routes.dart';
 import 'package:qiao/config/util/log_util.dart';
 import 'package:qiao/models/car.dart';
 
 import '../../config/base/base_controller.dart';
 import '../../config/base/base_list_controller.dart';
+import '../../config/enum/module_type.dart';
 import '../../config/net/http.dart';
 import '../../config/widget/loading_widget.dart';
 
@@ -95,15 +95,20 @@ class CarLogic extends BaseListController {
   }
 
   /// 跳转详情
-  Future<void> pushDetail(String id) async {
+  Future<void> jumpDetail(String id) async {
     // Get.changeTheme(Get.isDarkMode ? lightTheme : darkTheme);
     // await Get.forceAppUpdate();
     logD("msg---->$id");
     // if (id != null && id.length > 0) {
-    Get.toNamed(AppRoutes.carinfo, arguments: {'id': id});
+    Get.toNamed(ModuleTypeEnum.CARINFO.routepath, arguments: {'id': id});
     // } else {
     //   Loading.showToast("参数异常！");
     // }
+  }
+
+  /// 跳转新建
+  Future<void> jumpAdd() async {
+    Get.toNamed(ModuleTypeEnum.CARADD.routepath);
   }
 
   // /// 点赞

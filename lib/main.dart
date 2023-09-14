@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:qiao/config/const/key_const.dart';
 import 'package:qiao/config/util/shared_preferences.dart';
 
+import 'config/enum/module_type.dart';
 import 'config/env/global.dart';
 import 'config/route/routes.dart';
 
@@ -61,8 +62,8 @@ class MyApp extends StatelessWidget {
               // themeMode: ThemeMode.light,
               // routingCallback: (routing) {},
               initialRoute: SharedPreferencesUtil.getBool(KS.isLogin)
-                  ? AppRoutes.navbar
-                  : AppRoutes.login,
+                  ? ModuleTypeEnum.NAVBAR.routepath
+                  : ModuleTypeEnum.LOGIN.routepath,
             ));
   }
 }

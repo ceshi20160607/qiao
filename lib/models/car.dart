@@ -4,8 +4,10 @@ part 'car.g.dart';
 
 @JsonSerializable()
 class Car {
-  String id;
-  num carType;
+  Car();
+
+  late String id;
+  late num carType;
   String? startTime;
   String? endTime;
   num? startKiloNumber;
@@ -19,34 +21,12 @@ class Car {
   num? oilPrice;
   num? oilMoney;
   num? afterOilNumber;
-  String createTime;
+  late String createTime;
   String? createUserId;
   String? updateTime;
   String? updateUserId;
   String? companyId;
-
-  Car(
-      {this.id = '',
-      this.carType = 0,
-      this.startTime,
-      this.endTime,
-      this.startKiloNumber,
-      this.endKiloNumber,
-      this.betweenKiloNumber,
-      this.dangerNumber,
-      this.futureKiloNumber,
-      this.oilTitle,
-      this.beforeOilNumber,
-      this.oilLiterNumber,
-      this.oilPrice,
-      this.oilMoney,
-      this.afterOilNumber,
-      this.createTime = '',
-      this.createUserId,
-      this.updateTime,
-      this.updateUserId,
-      this.companyId});
-
-  factory Car.fromJson(Map<String, dynamic> json) => _$CarFromJson(json);
+  
+  factory Car.fromJson(Map<String,dynamic> json) => _$CarFromJson(json);
   Map<String, dynamic> toJson() => _$CarToJson(this);
 }
