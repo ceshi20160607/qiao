@@ -34,7 +34,10 @@ class CarinfoPage extends BaseCommonView<CarinfoLogic> {
     return GetBuilder<CarinfoLogic>(
         builder: (_) => creatCommonView(
               controller,
-              InfoItemWidget(fieldList: []),
+              InfoItemWidget(
+                fieldList: controller.fieldList,
+                inputFlag: false,
+              ),
               // Stack(
               //   children: ,
               //   // children: [
